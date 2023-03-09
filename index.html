@@ -17,7 +17,23 @@
 <body>
 
     <div class="wrapper">
-
+        <div class="form">
+            <label class="mx-3" for="distance">Distanza (km)</label>
+            <input type="text" id="distance" placeholder="Inserire la distanza in km prego">
+    
+            <label class="mx-3" for="user-age">Fascia d'età</label>
+            <select id="user-age">
+                <option value=""></option>
+                <option value="junior">Minorenne (6-17)</option>
+                <option value="adult">Adulto (18-64)</option>
+                <option value="senior">Senior (65-99)</option>
+            </select>
+    
+            <button id="submit-btn">Invia</button>
+            <div class="result">
+                <h1 class="price"></h1>
+            </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>
