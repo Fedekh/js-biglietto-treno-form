@@ -19,34 +19,47 @@
 
 
 const submit = document.getElementById ("submit-btn");
+const fee = 0.21;
+console.log(fee, submit, typeof fee, typeof submit);
+
 submit.addEventListener("click", function() {
     
-    const price = document.getElementById ("price");
+    const result = document.getElementById ("result");
     // RIPULIRE IL PRICE
-    // price = "";
+    // result.className = "";
     
     // Input
 
-    const distance = document.getElementById ("distance");
-    const distanceUser = parseInt(distance.value);
+    const distanceInput = document.getElementById ("distance");
+    const distance = parseInt(distanceInput.value);
 
-    const age = document.getElementById("user-age");
-    const userAge = age.value;
-    console.log(distanceUser,userAge, typeof distanceUser, typeof userAge);
+    const ageInput = document.getElementById("user-age");
+    const age = ageInput.value;
+
+    console.log(distance,age, typeof distance, typeof age);
 
     // Logica
+    // Occorre inserire un adeguato valore numerico per spicificare i km
 
     if (isNaN(distance) || distance < 0) {
         alert ('Per favore inserisci la distanza in km usando solo valori numerici positivi');
         // RIPULISCO I CAMPI
-        distanceUser = "";
-        userAge = "";
-
+        distanceInput.value = "";
+        ageInput.value = "";
     }
     
+
+    // Occorre fare distinzioni di prezzo dipendentemente dall'età del cliente
+
+    // if (age == junior) {
+    //     console.log(age, typeof age);
+
+    // }
+
     
     
     // Output
+    
 
 
     
