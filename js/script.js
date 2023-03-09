@@ -19,6 +19,8 @@
 
 
 const submit = document.getElementById ("submit-btn");
+const reset = document.getElementById ("reset-btn");
+
 const fee = 0.21;
 console.log(fee, submit, typeof fee, typeof submit);
 
@@ -34,12 +36,24 @@ submit.addEventListener("click", function() {
     
     const ageInput = document.getElementById("user-age");
     const age = ageInput.value;
+
+    const nameInput = document.getElementById("name");
+    const name = nameInput.value;
     
     let price = 0;
-    price = distance * 0.21;
-    console.log(distance,age, price, typeof price, typeof distance, typeof age);
+    price = (distance * fee).toFixed(2);
+    console.log(distance,age, price, name, typeof name, typeof price, typeof distance, typeof age);
 
     // Logica
+    // Occorre inserire un nome e cognome formato solo da caratteri
+    if (!isNaN(name) || (name === "")) {
+        alert ('Per favore inserisci un nome adeguato');
+        // RIPULISCO I CAMPI
+        distanceInput.value = ""; //riferimeto riga 22 html, il valore lo resetti
+        ageInput.value = "";  //riferimeto riga 25 html, il valore lo resetti
+        nameInput.value = "";
+    }
+
     // Occorre inserire un adeguato valore numerico per spicificare i km
 
     if ((isNaN(distance)) || distance < 0) {
@@ -54,45 +68,49 @@ submit.addEventListener("click", function() {
 
     if (age === "") {
         alert('Scegliere la tua fascia d\'eta');
-        document.getElementById('result').innerHTML = "";
-
-    }
-
-
-    if (age === "junior") {
+        
+    } else if (age === "junior") {
         price = (price * 0.8).toFixed(2);
-        document.getElementById('result').innerHTML = `Il costo del biglietto viene ${price}`;
         document.getElementById('rac').innerHTML = `Sarebbe meglio che viaggiassi accompagnato da un genitore`;
-        console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);
-    }
-    
-    if (age === "adult") {
-        price = price;
-        document.getElementById('result').innerHTML = `Il costo del biglietto viene ${price}`;
-        document.getElementById('rac').innerHTML = "";
-        console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);
+        console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);   
         
 
-    }
-    
-    if (age === "senior") {
+    } else if (age === "adult") {
+        price = (price * 1).toFixed(2);
+        console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);
+        document.getElementById('rac').innerHTML = "";
+        
+        
+
+    } else if (age === "senior") {
         price = (price * 0.6).toFixed(2);
-        document.getElementById('result').innerHTML = `Il costo del biglietto viene ${price}`;
         document.getElementById('rac').innerHTML = "";
-        console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);
-        
+        console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);          
 
     }
-         // Output
-     
+
+
+    // Output
 
     
-     //Ripulisco i campi di input
-
-     ageInput.value = "";
-     distanceInput.value = "";
-
-
+    document.getElementById('result').innerHTML = `il prezzo è ${price}`;
+      
     
+      
+    // NEL CASO IN CUI SI PREME IL TASTO RESET
+    
+    reset.addEventListener("click", function() {
+        //Ripulisco i campi di input
+    
+        ageInput.value = "";
+        distanceInput.value = "";
+        nameInput.value = "";
+        price = 0;
+        
+    
+    })
 
 })
+
+
+

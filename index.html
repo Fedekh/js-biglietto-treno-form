@@ -16,25 +16,34 @@
 
 <body>
 
-    <div class="wrapper">
-        <div class="form">
-            <label class="mx-3" for="distance">Distanza (km)</label>
-            <input type="text" id="distance" placeholder="Inserire la distanza in km prego">
-    
-            <label class="mx-3" for="user-age">Fascia d'età</label>
-            <select id="user-age">
-                <option value=""></option>
-                <option value="junior">Minorenne (6-17)</option>
-                <option value="adult">Adulto (18-64)</option>
-                <option value="senior">Senior (65-99)</option>
-            </select>
-    
-            <button id="submit-btn">Invia</button>
+    <div class="wrapper text-center text-white">
+        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+        <div class="form d-flex">
+            <div class="name mx-auto px-3 d-flex-row">
+                <label class="my-2 d-block" for="name">Nome e Cognome</label>
+                <input type="text" id="name" placeholder="Inserisca nome e cognome">
+            </div>
+            <div class="distance mx-auto px-3 d-flex-row">
+                <label class="mx-3 my-2 d-block" for="distance">Distanza (km)</label>
+                <input type="text" id="distance" placeholder="Inserire la distanza in km prego">    
+            </div>
+            <div class="age mx-auto px-3">
+                <label class="mx-3 mx-3 my-2 d-block" for="user-age">Fascia d'età</label>
+                <select id="user-age">
+                    <option value=""></option>
+                    <option value="junior">Minorenne (6-17)</option>
+                    <option value="adult">Adulto (18-64)</option>
+                    <option value="senior">Senior (65-99)</option>
+                </select>
+            </div>
+        </div>    
+            <button class="btn mx-4 btn-primary" id="submit-btn">Invia</button>
+            <button class="btn mx-4 btn-danger" id="reset-btn">Reset</button>
+
             <div class="resultprice">
-                <h1 id="result"></h1>
+                <h2 id="result"></h2>
                 <h2 id="rac"></h2>
             </div>
-        </div>
     </div>
     <script src="js/script.js"></script>
 </body>
