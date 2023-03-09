@@ -60,29 +60,30 @@ submit.addEventListener("click", function() {
 
 
     if (age === "junior") {
-        price = price * 0.8;
-        document.getElementById('result').innerHTML = `Il costo del biglietto viene ${price.toFixed(2)}`;
+        price = (price * 0.8).toFixed(2);
+        document.getElementById('result').innerHTML = `Il costo del biglietto viene ${price}`;
         document.getElementById('rac').innerHTML = `Sarebbe meglio che viaggiassi accompagnato da un genitore`;
-        console.log(price, age, typeof age, typeof price);
+        console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);
     }
     
     if (age === "adult") {
         price = price;
-        document.getElementById('result').innerHTML = `Il costo del biglietto viene ${price.toFixed(2)}`;
-        console.log(price, age, typeof age, typeof price);
+        document.getElementById('result').innerHTML = `Il costo del biglietto viene ${price}`;
         document.getElementById('rac').innerHTML = "";
+        console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);
+        
 
     }
     
     if (age === "senior") {
-        price = price * 0.6;
-        document.getElementById('result').innerHTML = `Il costo del biglietto viene ${price.toFixed(2)}`;
-        console.log(price, age, typeof age, typeof price);
+        price = (price * 0.6).toFixed(2);
+        document.getElementById('result').innerHTML = `Il costo del biglietto viene ${price}`;
         document.getElementById('rac').innerHTML = "";
+        console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);
+        
 
     }
-    
-    // Output
+         // Output
      
 
     
