@@ -26,8 +26,9 @@ console.log(fee, submit, typeof fee, typeof submit);
 
 submit.addEventListener("click", function() {
     const result = document.getElementById ("result");
-    // RIPULIRE IL PRICE
-    result.className = "";  //se ho classi css sopra le toglo tutte
+        // RIPULIRE IL PRICE
+        result.className = "";  //se ho classi css sopra le toglo tutte
+    
     
     // Input
     
@@ -105,7 +106,7 @@ submit.addEventListener("click", function() {
         ageInput.value = "";
         distanceInput.value = "";
         nameInput.value = "";
-        price = 0;
+        document.location.reload(true);      
         
     
     })
