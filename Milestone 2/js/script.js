@@ -24,6 +24,11 @@ const reset = document.getElementById ("reset-btn");
 const fee = 0.21;
 console.log(fee, submit, typeof fee, typeof submit);
 
+let carriage = Math.floor((Math.random() * 15) + 1); //supponendo che le carrozze siano 15
+let codeRandom = Math.floor((Math.random() * 99999) + 10000); //codice randomico CP
+console.log(carriage, codeRandom, typeof carriage, typeof codeRandom);
+
+
 submit.addEventListener("click", function() {
     const result = document.getElementById ("result");
         // RIPULIRE IL PRICE
@@ -94,7 +99,12 @@ submit.addEventListener("click", function() {
     // Output
 
     
-    document.getElementById('result').innerHTML = `il prezzo è ${price}`;
+    document.getElementById('name-passegger').innerHTML = name;
+    document.getElementById('offert').innerHTML = age;
+    document.getElementById('random-carriage').innerHTML = carriage;
+    document.getElementById('random-code').innerHTML = codeRandom;
+    document.getElementById('result').innerHTML = price;
+
       
     
       
