@@ -23,7 +23,7 @@ const reset = document.getElementById ("reset-btn");
 
 const fee = 0.21;
 console.log(fee, submit, typeof fee, typeof submit);
-
+let offer = "nessuna offerta";
 let carriage = Math.floor((Math.random() * 15) + 1); //supponendo che le carrozze siano 15
 let codeRandom = Math.floor((Math.random() * 99999) + 10000); //codice randomico CP
 console.log(carriage, codeRandom, typeof carriage, typeof codeRandom);
@@ -77,9 +77,9 @@ submit.addEventListener("click", function() {
         
     } else if (age === "junior") {
         price = (price * 0.8).toFixed(2);
+        offer = "under 18";
         document.getElementById('rac').innerHTML = `Sarebbe meglio che viaggiassi accompagnato da un genitore`;
         console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);   
-        
 
     } else if (age === "adult") {
         price = (price * 1).toFixed(2);
@@ -89,6 +89,7 @@ submit.addEventListener("click", function() {
         
 
     } else if (age === "senior") {
+        offer = "senior";
         price = (price * 0.6).toFixed(2);
         document.getElementById('rac').innerHTML = "";
         console.log("Il prezzo del biglietto è: ", price , "E l'utente è classificato come: ", age);          
@@ -98,7 +99,9 @@ submit.addEventListener("click", function() {
 
     // Output
 
-    
+    const second = document.getElementById(second);
+    second.classList.remove(".ms_hidden");
+
     document.getElementById('name-passegger').innerHTML = name;
     document.getElementById('offert').innerHTML = age;
     document.getElementById('random-carriage').innerHTML = carriage;
